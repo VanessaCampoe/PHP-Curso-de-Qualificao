@@ -12,13 +12,13 @@ session_start();
 
 // confiuração  do banco de dados
 $servidor = "localhost";
-$usuaro_db = "root";
-$senha_bd = "";
-$banco = "classificado_bd";
+$usuario_db = "root";
+$senha_db = "";
+$banco = "classificados_db";
 
 // cria a conexao 
 
-$conexao = mysqli_connect($servidor,$usuario_bd, $senha_bd, $banco);
+$conexao = mysqli_connect($servidor,$usuario_db, $senha_db, $banco,3306);
 
 // verifica conexao 
 if (!$conexao) {
