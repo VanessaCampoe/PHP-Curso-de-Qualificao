@@ -2,7 +2,7 @@
 session_start();
 // Verifica se o usuário clicou em "Zerar contador"
 if (isset($_GET['acao']) && $_GET['acao'] === 'zerar') {
-    session_destroy(); // Destroi todos os dados da sessão
+    unset($_SESSION['contador']); // Destroi todos os dados da sessão o desyroi e para mais pag . nesse caso so isso mesmo  
     header("Location: contador_sessao.php"); // Redireciona para recarregar a página sem a query string
     exit;
 }
