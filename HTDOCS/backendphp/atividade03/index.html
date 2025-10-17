@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de Visitante</title>
+</head>
+<body>
+    <h2>Formulário de Cadastro</h2>
+    <form action="confirma.php" method="post">
+        <label>Nome Completo:</label>
+        <input type="text" name="nome"><br><br>
+        <label>E-mail:</label>
+        <input type="email" name="email"><br><br>
+        <label>Idade:</label>
+        <input type="number" name="idade"><br><br>
+        <label>Cidade:</label>
+        <input type="text" name="cidade"><br><br>
+        <label>Curso de Interesse:</label>
+        <select name="curso">
+            <option value="Backend">Backend</option>
+            <option value="Frontend">Frontend</option>
+            <option value="Redes">Redes</option>
+            <option value="Ciberseguranca">Cibersegurança</option>
+        </select><br><br>
+        <input type="submit" value="Enviar Cadastro">
+    </form>
+</body>
+</html>

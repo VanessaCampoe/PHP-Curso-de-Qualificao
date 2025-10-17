@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Pesquisa de Produtos - TechNow</title>
+</head>
+<body>
+    <h2>Pesquisar Produto</h2>
+    <form action="resultado.php" method="get">
+        <label>Nome do Produto:</label>
+        <input type="text" name="produto"><br><br>
+        <label>Faixa de Preço:</label>
+        <select name="preco">
+            <option value="ate100">Até R$100</option>
+            <option value="100a500">De R$100 a R$500</option>
+            <option value="acima500">Acima de R$500</option>
+        </select><br><br>
+        <input type="submit" value="Pesquisar">
+    </form>
+</body>
+</html>
