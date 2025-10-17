@@ -1,9 +1,27 @@
+<?php
+require_once "config.php";
+
+// Verifica se o formulário foi enviado
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+    $nome = $_POST["nome"];
+    $email = $_POST["email"];
+
+    // Inserção no banco
+    $sql = "INSERT INTO usuarios (nome, email) VALUES ('$nome', '$email')";
+
+    if(mysqli_query($conn, $sql)){
+        echo "<p>Registro inserido com sucesso!</p>";
+    } else {
+        echo "Erro: " . mysqli_error($conn);
+    }
+}
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cadastrar Usuário</title>
     <style>
 /* Fundo escuro*/
 body {
@@ -122,36 +140,13 @@ margin: auto;
 </style>
 </head>
 <body>
-    
-    <h1>Bem vindo ao CRUD em PHP</h1>
-    <p>Escolha um opção abaixo:</p>
-    <ul>
-    <li><a href="cadastrar.php">Cadastrar Novo Registro</a></li>
-    <li><a href="editar.php"></a>Editar um Registro</li>
-    <li><a href="ecluir.php"></a>Excluir um Registro</li>
-    </ul>
-    
+    <h2>Cadastrar Novo Usuário</h2>
+    <form action="cadastro.php" method="POST">
+        Nome: <input type="text" name="nome" required><br><br>
+        E-mail: <input type="email" name="email" required><br><br>
+        <input type="submit" value="Cadastrar">
+    </form>
+
+    <p><a href="index.php">Voltar à Página Inicial</a></p>
 </body>
 </html>
-<hr>
-    <h2>Usuários Cadastrados </h2>
-<?php 
-$result = mysqli_query($conn, "SELECT * FROM usuario");
-if(mysqli_num_rows($result) > 0){
-    echo "<table borde='1' cellpadding= '8'>";
-    echo "<tr><th>ID</th>Nome</th><th>Email</th></tr>";
-    while($row = mysqli_fetch_assoc($result)){
-        echo "<tr>";
-        echo "<td>" .$row['id']."</td>";
-        echo "<td>" .$row['nome']."</td>";
-        echo "<td>" .$row['email']."</td>";
-        echo "<td>";
-
-    }
-    echo "<?table>";
-} else {
-    echo "<p> NNenhum resgistro econtrado </p>";
-}
-    
-    
-?>

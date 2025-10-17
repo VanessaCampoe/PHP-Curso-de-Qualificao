@@ -22,6 +22,7 @@ if (!isset($_SESSION['contador'])) {
 <head>
 <meta charset="utf-8">
 <title>Contador de Sessão</title>
+
 </head>
 <body>
 <h1>Contador de Visitas (Sessão)</h1>
